@@ -13,11 +13,11 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "clean": "rm -rf dist",
     "codegen": "openapi-generator generate --generator-name typescript-axios --input-spec codegen/kbswagger.yaml --config codegen/config.yaml",
-    "build": "npm run clean && tsc",
+    "build": "tsc",
     "test": "mocha test/*.ts --require ts-node/register",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "clean": "npm run build"
   },
   "dependencies": {
     "axios": "^0.20.0"
